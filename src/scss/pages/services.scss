@@ -1,0 +1,41 @@
+.services {
+  display: block;
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__card {
+    border-radius: 20px;
+    padding: 20px;
+    height: 234px;
+    background: linear-gradient(174deg, rgba(255, 255, 255, 0.00) -13.92%, rgba(90, 132, 214, 0.20) 71.12%), #F2F6FD;
+  }
+}
+
+@media (max-width: 1100px) {
+  .services {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &__card {
+      max-height: 191px;
+      padding: 12px 11px;
+    }
+
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+
+      .title-s {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}

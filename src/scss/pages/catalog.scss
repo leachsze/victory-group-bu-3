@@ -1,0 +1,15 @@
+.catalog {
+    &__cars {
+        &__sort {
+            display: flex;
+            align-items: center;
+            
+            &__title {
+                margin-right: 20px;
+            }
+            .select2 {
+                width: 306px !important;
+            }
+        }
+    }
+}

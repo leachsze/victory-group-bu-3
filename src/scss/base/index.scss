@@ -1,0 +1,45 @@
+@import 'vars';
+@import 'reset';
+@import 'fonts';
+@import 'icons';
+@import 'typography';
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  padding: 0 80px;
+}
+
+.info__mobile {
+  display: none !important;
+}
+
+
+a {
+  color: $black;
+}
+
+.lazy {
+  opacity: 0;
+  @include transition;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+@media(max-width: 1332px) {
+  .container {
+    max-width: auto;
+    padding: 0 32px;
+  }
+}
+
+@media(max-width: 1100px) {
+  .container {
+    max-width: auto;
+    padding: 0 16px;
+  }
+}

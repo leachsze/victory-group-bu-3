@@ -1,0 +1,138 @@
+.button {
+  padding: 0;
+  padding-block: 0;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 28px */
+
+  @include transition;
+
+  &.button-main {
+    background: $blue-main;
+    color: $white;
+
+    &:hover {
+      background: $blue-dark;
+    }
+
+    &:active {
+      background: $blue-dark;
+      color: $grey-2;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      background: $grey-3;
+      color: $light-grey;
+    }
+  }
+
+  &.button-outline {
+    color: #425EF1;
+    border: 2px solid #425EF1;
+    background: transparent;
+
+    &.size-s {
+      padding: 5px 15px;
+    }
+  
+    &.size-m {
+      padding: 9px 19px;
+    }
+  
+    &.size-l {
+      padding: 15px 30px;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      border: 1px solid $grey-3;
+      color: $grey-3;
+    }
+
+    &.light {
+      border: 1px solid $white;
+    }
+
+    &:hover {
+      border-color: #425EF1;
+      background: #425EF1;
+      color: $white;
+    }
+  }
+
+  &.light {
+    color: $white;
+
+    &:hover {
+      border-color: $white;
+      background: $white;
+      color: $black;
+    }
+
+    &:active {
+      border-color: $white;
+      background: $white;
+      color: $grey-3;
+    }
+  }
+
+  &.dark {
+    color: $black;
+
+    &:hover {
+      border-color: $black;
+      background: $black;
+      color: $grey-2;
+    }
+    
+    &:active {
+      border-color: $black;
+      background: $black;
+      color: $grey-3;
+    }
+  }
+
+  &.size-s {
+    padding: 6px 16px;
+  }
+
+  &.size-m {
+    padding: 10px 25px;
+  }
+
+  &.size-l {
+    padding: 14px 24px;
+  }
+}
+
+.icon__button {
+  padding: 0;
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50px;
+  @include transition;
+
+  &:hover {
+    background: #BCC5E2;
+  }
+
+  &:active {
+    background: #425EF1;
+  }
+
+  span {
+    width: 100%;
+    height: 100%;
+  }
+}

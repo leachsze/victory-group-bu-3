@@ -1,0 +1,64 @@
+.new-cars {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: $white;
+
+  &-catalog {
+    margin-top: 116px;
+    border-radius: 100px 100px 0 0;
+    background: #F2F6FD;
+
+    .car-item__title__name {
+        max-width: 229px;
+    }
+
+    .car-item__action {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    
+        .button {
+            width: 100%;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    row-gap: 40px;
+    column-gap: 20px; 
+  }
+
+  &__container {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: calc(100vw - 160px);
+    padding: 0 10px;
+  }
+
+  &__pagination { 
+    height: 40px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .new-cars {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__container {
+      max-width: none;
+    }
+
+    .title__link {
+      display: none;
+    }
+  }
+}

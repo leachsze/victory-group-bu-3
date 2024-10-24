@@ -1,0 +1,20 @@
+.input {
+  padding: 12px 30px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  border-radius: 20px;
+  background: #FFF;
+
+  &::placeholder {
+    color: #9BA1B3;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+

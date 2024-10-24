@@ -1,0 +1,176 @@
+.credit-main {
+    margin-top: 40px;
+    padding: 80px;
+    border-radius: 60px;
+    background: #DDE6F7;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    &__select {
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .select2-selection.select2-selection--single {
+                border-radius: 25px;
+            }
+        }
+    }
+
+    &__form {
+        padding: 40px;
+        background: $white;
+        border-radius: 20px;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        height: 100%;
+
+        &__container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+
+            .input {
+                background: #F2F6FD;
+            }
+
+            .checkbox__label {
+                font-size: 9px;
+            }
+        }
+    }
+
+    &__credit-info {
+        &__wrapper {
+            padding: 40px;
+            border-radius: 20px;
+            background: $white;
+        }
+    }
+
+    &__slider {
+        &__wrapper {
+            padding: 20px;
+            background: $white;
+            border-radius: 20px;
+        }
+    }
+
+    &__preview {
+        background: $white;
+        max-height: 228px;
+        width: 100%;
+        border-radius: 20px;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50px;
+        background: #425EF1;
+    }
+    
+    &__step {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .title-s {
+            font-size: 20px;
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    &__circle-s {
+        width: 15px;
+        height: 15px;
+        border-radius: 50px;
+        background: #425EF1;
+    }
+
+    &__credit-info__item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        .menu-text {
+            font-size: 12px;
+        }
+
+        .title-s {
+            color: #425EF1;
+        }
+    }
+
+    &__credit-info__wrapper {
+        display: grid;
+        column-gap: 15px;
+        row-gap: 51px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main__banner {
+        margin-bottom: 0;
+        margin-top: 40px;
+    }
+
+    .main__banner__image__car  {
+        width: 290px;
+    }
+
+    .main__banner__image__car-icon {
+        width: 200px;
+    } 
+
+    .main__banner__image__wheels {
+        width: 280px;
+    }
+
+    .main__banner__image__wheels-icon {
+        width: 330px;
+        top: 60px;
+    }
+}
+
+.credit-conditions {
+    &__settings {
+        &__range {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &__wrapper {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                padding: 15px 20px;
+                background: $white;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+.credit-page .banks {
+    margin-top: 60px;
+}

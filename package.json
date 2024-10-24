@@ -1,0 +1,72 @@
+{
+  "author": "Sunsin Andrey <andreysunone@gmail.com>",
+  "name": "victory-group-bu-3",
+  "version": "5.18.0",
+  "description": "Лендинг б/у автомобилей для Victory Group №3",
+  "homepage": "https://github.com/LeachMartinez/victory-group-bu-3#readme",
+  "browserslist": [
+    "last 2 versions",
+    "> 5%"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.0",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^9.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^4.0.0",
+    "imagemin": "^9.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^8.0.0",
+    "imagemin-webp-webpack-plugin": "^3.3.6",
+    "img-optimize-loader": "^1.0.7",
+    "mini-css-extract-plugin": "^2.4.4",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^8.1.0",
+    "sass": "1.77.6",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^14.1.0",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack": "^5.89.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
+    "production": "webpack --config configuration/webpack.prod.config.js --mode=production",
+    "stats": "webpack --config configuration/webpack.prod.config.js --mode=production --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json"
+  },
+  "target": "web",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^5.0.36",
+    "jquery": "^3.7.1",
+    "jquery-fancybox": "^3.1.0",
+    "jquery-lazy": "^1.7.11",
+    "jquery-modal": "^0.9.2",
+    "jquery-validation": "^1.21.0",
+    "jquery.cookie": "^1.4.1",
+    "jquery.inputmask": "^3.3.4",
+    "select2": "^4.1.0-rc.0",
+    "swiper": "^11.1.12"
+  }
+}

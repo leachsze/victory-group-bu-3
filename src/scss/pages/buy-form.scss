@@ -1,0 +1,33 @@
+.buy__form {
+    margin-top: 40px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: #DDE6F7;
+    border-radius: 20px;
+    width: fit-content;
+
+    &__items {
+        display: flex;
+        gap: 10px;
+
+        .buy__form__buttons {
+            max-width: 342px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+
+            .button {
+                margin-top: 27px;
+                width: 100%;
+            }
+        }
+        
+        .input__wrapper {
+            max-width: 342px;
+        }
+    }
+}

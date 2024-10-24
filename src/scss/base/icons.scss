@@ -1,0 +1,199 @@
+.clock-icon {
+  mask-image: url("../images/icons/clock.svg");
+  -webkit-mask-image: url("../images/icons/clock.svg");
+  background-color: #425EF1;
+}
+
+.mark-icon {
+  mask-image: url("../images/icons/mark.svg");
+  -webkit-mask-image: url("../images/icons/mark.svg");
+  background-color: #425EF1;
+}
+
+.search-icon {
+  mask-image: url("../images/icons/search.svg");
+  -webkit-mask-image: url("../images/icons/search.svg");
+  background-color: $white
+}
+
+.power-icon {
+  mask-image: url("../images/icons/power.svg");
+  -webkit-mask-image: url("../images/icons/power.svg");
+  background-color: #425EF1;
+}
+
+.speedometer-icon {
+  mask-image: url("../images/icons/speedometer.svg");
+  -webkit-mask-image: url("../images/icons/speedometer.svg");
+  background-color: #425EF1;
+}
+
+.droplets-icon {
+  mask-image: url("../images/icons/droplets.svg");
+  -webkit-mask-image: url("../images/icons/droplets.svg");
+  background-color: #425EF1;
+}
+
+.drive-unit-icon {
+  mask-image: url("../images/icons/drive-unit.svg");
+  -webkit-mask-image: url("../images/icons/drive-unit.svg");
+  background-color: #425EF1;
+}
+
+.plus-icon {
+  background: url("../images/icons/plus.svg");
+}
+
+.minus-icon {
+  background: url("../images/icons/minus.svg");
+}
+
+.alert-icon {
+  mask-image: url("../images/icons/alert.svg");
+  -webkit-mask-image: url("../images/icons/alert.svg");
+  background-color: #425EF1;
+}
+
+.arrow-icon {
+  mask-image: url("../images/icons/arrow-icon.svg");
+  -webkit-mask-image: url("../images/icons/arrow-icon.svg");
+  background-color: #000000;
+}
+
+.menu-icon {
+  mask-image: url("../images/icons/menu.svg");
+  -webkit-mask-image: url("../images/icons/menu.svg");
+  background-color: #425EF1;
+}
+
+.cross-icon {
+  mask-image: url("../images/icons/cross.svg");
+  -webkit-mask-image: url("../images/icons/cross.svg");
+  background-color: #425EF1
+}
+
+.phone-icon {
+  mask-image: url("../images/icons/phone.svg");
+  -webkit-mask-image: url("../images/icons/phone.svg");
+  background-color: #425EF1;
+}
+
+.check-icon {
+  mask-image: url("../images/icons/check.svg");
+  -webkit-mask-image: url("../images/icons/check.svg");
+  background-color: #425EF1;
+}
+
+.play-icon {
+  mask-image: url("../images/icons/play-circle.svg");
+  -webkit-mask-image: url("../images/icons/play-circle.svg");
+  background-color: #425EF1;
+}
+
+.user-icon {
+  mask-image: url("../images/icons/user-icon.svg");
+  -webkit-mask-image: url("../images/icons/user-icon.svg");
+  background-color: #425EF1;
+}
+
+.help-icon {
+  mask-image: url("../images/icons/help-circle.svg");
+  -webkit-mask-image: url("../images/icons/help-circle.svg");
+  background-color: #425EF1;
+}
+
+.trade-in-icon {
+  mask-image: url("../images/icons/trade-in-icon.svg");
+  -webkit-mask-image: url("../images/icons/trade-in-icon.svg");
+  background-color: #425EF1;
+}
+
+.calendar-icon {
+  mask-image: url("../images/icons/calendar-icon.svg");
+  -webkit-mask-image: url("../images/icons/calendar-icon.svg");
+  background-color: #425EF1;
+}
+
+.clock-icon {
+  mask-image: url("../images/icons/clock-icon.svg");
+  -webkit-mask-image: url("../images/icons/clock-icon.svg");
+  background-color: #425EF1;
+}
+
+.coins-icon {
+  mask-image: url("../images/icons/coins-icon.svg");
+  -webkit-mask-image: url("../images/icons/coins-icon.svg");
+  background-color: #425EF1;
+}
+
+.credit-card-icon {
+  mask-image: url("../images/icons/credit-card-icon.svg");
+  -webkit-mask-image: url("../images/icons/credit-card-icon.svg");
+  background-color: #425EF1;
+}
+
+.photo-icon {
+  mask-image: url("../images/icons/photo-icon.svg");
+  -webkit-mask-image: url("../images/icons/photo-icon.svg");
+  background-color: #425EF1;
+}
+
+.video-icon {
+  mask-image: url("../images/icons/video-icon.svg");
+  -webkit-mask-image: url("../images/icons/video-icon.svg");
+  background-color: #425EF1;
+}
+
+.compare-icon {
+  mask-image: url("../images/icons/compare-icon.svg");
+  -webkit-mask-image: url("../images/icons/compare-icon.svg");
+  background-color: #425EF1;
+}
+
+.favourite-icon {
+  mask-image: url("../images/icons/favourite.svg");
+  -webkit-mask-image: url("../images/icons/favourite.svg");
+  background-color: $white;
+}
+
+.favourite-icon,
+.compare-icon,
+.video-icon,
+.photo-icon,
+.clock-icon,
+.coins-icon,
+.credit-card-icon,
+.calendar-icon,
+.trade-in-icon,
+.help-icon,
+.user-icon,
+.play-icon,
+.check-icon,
+.menu-icon,
+.cross-icon,
+.phone-icon,
+.arrow-icon,
+.alert-icon,
+.plus-icon,
+.minus-icon,
+.power-icon,
+.speedometer-icon,
+.droplets-icon,
+.drive-unit-icon,
+.search-icon,
+.clock-icon,
+.mark-icon {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  mask-repeat: no-repeat;
+  -webkit-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  background-position: center;
+  -webkit-position: no-repeat;
+  -webkit-mask-position: center;
+  transition: all 0.3s ease;
+  display: block;
+  -webkit-mask-size: 100%;
+}

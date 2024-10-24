@@ -1,0 +1,188 @@
+.footer {
+
+  &__form {
+    color: $white;
+    max-width: 623px;
+
+    &__image {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &__container {
+      border-radius: 100px 100px 0px 0px;
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 12.89%, #293442 65.7%), url("../images/content/footer-car.png") lightgray 603.234px -238.5px / 100% 158.678% no-repeat;
+      position: relative;
+      padding-bottom: 72px;
+      padding-top: 72px;
+    }
+  }
+
+  &__content {
+    background: #293442;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    &__text {
+      color: $white;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 22.4px */
+      
+      address {
+        font-style: normal;
+      } 
+    }
+  }
+
+  &__nav {
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__container {
+      gap: 40px;
+      align-items: center;
+      display: flex;
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &__offert {
+    color: #DDE6F7;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+  }
+
+  &__legal {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    color: $white;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .footer {
+    &__form {
+      &__container {
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 12.89%, #293442 99.98%), url("../images/content/footer-car.png") lightgray 50% / cover no-repeat;
+        border-radius: 20px 20px 0 0;
+        padding: 30px 16px 54px 16px;
+        
+        .title-l {
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%; /* 33.6px */
+          margin-bottom: 12px;
+        }
+
+        .title-s {
+          display: block;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 22.4px */
+          margin-bottom: 52px;
+        }
+
+        .input__wrapper {
+          margin-bottom: 12px;
+        }
+
+        .checbox__wrapper {
+          margin-bottom: 15px;
+          display: flex;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
+
+    &__content {
+      padding: 30px 16px;
+    }
+
+    &__info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    &__nav__wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    &__nav__container {
+      flex-direction: column;
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    &__nav {
+      ul {
+        flex-wrap: wrap;
+      }
+
+      li {
+        width: calc(50% - 10px);
+      }
+    }
+
+    &__offert {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 19.6px */
+    }
+
+    &__legal {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+}

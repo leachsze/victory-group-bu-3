@@ -1,0 +1,33 @@
+.advantages {
+    margin-top: 103px;
+    border-radius: 100px 100px 0 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: #F2F6FD;
+
+    .title__container {
+        margin-bottom: 40px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        align-items: center;
+    }
+
+    &__item {
+        height: 168px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        background: #DDE6F7;
+        padding: 40px 20px;
+
+        img {
+            width: 100px;
+            height: 88px;
+        }
+    }
+}

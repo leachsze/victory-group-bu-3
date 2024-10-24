@@ -1,0 +1,46 @@
+.tabs {
+  display: flex;
+  border-radius: 24px;
+  background-color: $white;
+  width: fit-content;
+  padding: 8px;
+  gap: 4px;
+  margin-bottom: 0;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  &__wrapper {
+    overflow-x: auto;
+  }
+
+  &__item {
+    background: $grey-2;
+    color: $dark-grey;
+    border-radius: $border-radius;
+    padding: 5px 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    @include button-text;
+    @include transition;
+
+    &:hover {
+      border: 1px solid $black;
+      color: $black;
+    }
+
+    &.active {
+      background: $black;
+      color: $white;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

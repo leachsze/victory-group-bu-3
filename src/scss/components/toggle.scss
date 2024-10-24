@@ -1,0 +1,54 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__text {
+    cursor: pointer;
+  }
+
+  &__button {
+    position: relative;
+    width: 48px;
+    height: 32px;
+    margin: 0;
+    vertical-align: top;
+    background: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 27px;
+      height: 27px;
+      background-color: $white;
+      border-radius: 50%;
+      transition: all 0.3s;
+      box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    }
+
+    &:checked::after {
+        left: calc(100% - 29px);
+        background-color: $white;  
+    }
+
+    &:checked {
+      border: 1px solid #425EF1;
+      background-color: #425EF1;
+    }
+    
+    &:checked + .toggle__text {
+      color: $black
+    }
+  }
+}
