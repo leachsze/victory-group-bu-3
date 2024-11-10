@@ -22,7 +22,7 @@
         top: 40px;
         height: fit-content;
         flex-shrink: 0;
-        padding: 60px;
+        padding: 20px;
         border-radius: 20px;
         background: #DDE6F7;
         
@@ -97,6 +97,14 @@
             width: 100%;
             background: #fff;
             height: 419px;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
         }
 
         &__small {
@@ -105,9 +113,18 @@
             gap: 20px;
 
             &__item {
+                position: relative;
                 height: 77px;
                 background: #fff;
                 border-radius: 15px;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 15px;
+                }
             }
         }
     }
@@ -191,6 +208,153 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+            }
+        }
+    }
+
+    &__credit-mobile {
+        display: none;
+    }
+
+    .more-photo {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.40);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #fff;
+        }
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .car-info__card {
+        flex-wrap: wrap;
+    }
+
+    .car-info__wrapper {
+        width: 100%;
+    }
+    
+    .car-info__about {
+        max-width: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .car-info { 
+        flex-direction: column;
+        border-radius: 20px 20px 0 0;
+        padding: 30px 16px;
+        
+        &__title {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%; /* 28.8px */
+        }
+
+        &__price-old {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%; /* 25.2px */
+        }
+
+        &__credit-sum {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%; /* 28px */
+        }
+
+        &__button {
+            display: none;
+        }
+
+        &__price {
+            .title-m {
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 120%; /* 36px */
+            }
+        }
+
+        &__credit-mobile {
+            display: block;
+            width: 100%;
+        }
+
+        &__about {
+            margin-top: 20px;
+            width: 100%;
+            max-width: none;
+        }
+
+        &__gallery {
+            display: none;
+        }
+
+        &__wrapper {
+            width: 100%;
+        }
+
+        &__spec {
+            flex-direction: column;
+            padding: 16px;
+        }
+
+        &__card {
+            flex-direction: column;
+        }
+
+        &__credit {
+            padding: 20px;
+
+            &__title {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 120%; /* 24px */
+                margin-bottom: 4px;
+            }
+
+            &__car-name {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+            }
+
+            .range__title {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 140%; /* 19.6px */
+            }
+
+            .range__top {
+                align-items: center;
+            }
+            .credit-conditions__settings__range .range__title {
+                font-size: 10px;
             }
         }
     }

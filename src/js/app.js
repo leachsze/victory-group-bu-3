@@ -252,32 +252,50 @@ window.app = {
   runListeners: () => {
     $('#show-more-btn').on('click', (event) => {
       const target = $(event.currentTarget);
-      if (target.text() === 'Показать все марки') {
+      if (target.text() === 'Показать все') {
         $('.car-brands__more').css({ display: 'flex' });
         return target.text('Скрыть марки');
       }
 
       $('.car-brands__more').css({ display: 'none' });
-      return target.text('Показать все марки');
+      return target.text('Показать все');
     });
 
     $('.menu-icon').on('click', () => {
-      $('.mobile-menu').addClass('active');
+      $('.header').toggleClass('active');
+      $('.header__mobile__menu').toggleClass('active');
     });
 
-    $('.mobile-menu__backdrop').on('click', () => {
-      $('.mobile-menu').removeClass('active');
+    $('.search-icon').on('click', () => {
+      $('.header__search__container').addClass('active');
     });
 
-    $('.mobile-menu__content .cross').on('click', () => {
-      $('.mobile-menu').removeClass('active');
+    $('.header__search .cross-icon').on('click', () => {
+      $('.header__search__container').removeClass('active');
     });
-    $('.compare__item__cross').each((_, el) => {
-      $(el).on('click', (event) => {
-        const compareItemId = $(event.currentTarget).closest('.compare__item').data('complectation-id');
-        $(`[data-complectation-id="${compareItemId}"]`).remove();
+
+    $('#filter-checkbox').on('change', (event) => {
+      if (event.currentTarget.checked) {
+        $('.new-cars__wrapper .filter').css('display', 'flex');
+      } else {
+        $('.new-cars__wrapper .filter').css('display', 'none');
+      }
+    });
+
+    const hiddenImages = $(".car-info__gallery__small__item[style='display:none;']");
+
+    if (hiddenImages.length > 0) {
+      const target = $('.car-info__gallery__small__item').not("[style='display:none;']").last();
+      $(`
+        <div class="more-photo" >
+            <span class="more-photo__text">+ ${hiddenImages.length} фото </span>
+        </div>
+      `).appendTo(target);
+
+      $('.more-photo').on('click', () => {
+        Fancybox.fromSelector('[data-fancybox="car-gallery"]');
       });
-    });
+    }
   },
   runTabs: () => {
     const mostPopularTabs = new Tab('.most-popular__tabs-container');

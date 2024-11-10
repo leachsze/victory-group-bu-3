@@ -36,6 +36,7 @@
                 height: 100%;
                 border-radius: 20px;
                 object-fit: cover;
+                width: 100%;
             }
         }
 
@@ -66,5 +67,12 @@
             flex-direction: column;
             padding: 20px;
         }
+    }
+}
+
+
+@media (max-width: 1100px) {
+    .sales__wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
     }
 }

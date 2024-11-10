@@ -8,14 +8,19 @@ export default class Swipers {
       $(el).addClass(`js-car-item-swiper-${index}`);
       compareBodySwipers.push(new Swiper(`.js-car-item-swiper-${index}`, {
         modules: [Pagination, Navigation],
+        slidesPerView: 1,
         pagination: this.defautlPagination(),
       }));
+    });
+
+    $('.car-item__preview .swiper-pagination-bullet').hover(function() {
+      $(this).trigger('click');
     });
   }
 
   static carItemsSwipers() {
     const props = {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 20,
     };
 
@@ -65,6 +70,7 @@ export default class Swipers {
       clickable: true,
       type: 'bullets',
       lockClass: 'swiper-hide-pagination',
+      renderBullet: (index, className) => `<div class="${className}" ><span class="bullet-wrapper"></span></div>`,
     };
   }
 }

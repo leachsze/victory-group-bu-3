@@ -9,11 +9,12 @@
   &__image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .swiper-pagination {
     padding: 0 20px;
+    top: 0;
     width: 100% !important;
     position: absolute;
     bottom: 0;
@@ -22,18 +23,32 @@
     bottom: 20px;
     @include transition;
     gap: 5px;
-
-    .swiper-pagination-bullet {
-      width: 100%;
-      height: 2px;
-      background: $white;
-      min-height: 0;
-      border-radius: 0;
-      @include transition;
+    display: flex;
+    align-items: flex-end;
     
-      &-active {
-        background: #425EF1;
-      }
+    .bullet-wrapper {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 2px;
+        background: $white;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        min-height: 0;
+        border-radius: 0;
+        background: transparent !important;
+        @include transition;
+        align-items: flex-end;
+    
+        &-active {
+            .bullet-wrapper {
+                background: #425EF1;
+            }
+        }
     }
   }
 
@@ -60,6 +75,7 @@
     }
 
     &__year {
+      white-space: nowrap;
       color: #808080;
     }
   }
@@ -91,6 +107,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .button {
+        font-size: 14px;
+    }
   }
 }
 

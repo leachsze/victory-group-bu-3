@@ -13,3 +13,21 @@
         }
     }
 }
+
+.new-cars-catalog__filter-button {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .new-cars-catalog__filter-button {
+        display: block;
+    }
+
+    .new-cars-catalog {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .catalog__cars__sort {
+        display: none;
+    }
+}

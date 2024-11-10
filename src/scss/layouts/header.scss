@@ -3,9 +3,10 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 100000;
 
   .logo {
+    width: 10vw;
     flex-shrink: 0;
     cursor: pointer;
   }
@@ -14,6 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &__mobile {
+        display: none;
+    }
   }
 
   nav {
@@ -29,7 +34,7 @@
 
     &__text {
       color: $white;
-      font-size: 18px;
+      font-size: 1.1vw;
       font-style: normal;
       font-weight: 500;
       line-height: 140%; /* 25.2px */
@@ -41,12 +46,14 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 1.1vw;
   }
 
   &__phone {
     color: $white;
     gap: 10px;
     display: flex;
+    font-size: 1.1vw;
     align-items: center;
   }
 
@@ -61,12 +68,173 @@
     display: flex;
     gap: 40px;
   }
+
+  &__mobile__menu {
+    display: none;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__container {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: -100%;
+        left: 0;
+        background: #DDE6F7;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        transition: 0.3s top;
+
+        &.active {
+            top: 0;
+        }
+    }
+
+    .input__wrapper {
+        width: 100%;
+    }
+
+    &__button {
+        flex-shrink: 0;
+        width: 260px;
+    }
+
+    .cross-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        background: #000;
+    }
+
+    &__result {
+        width: calc(100% - 484px);
+        margin: 0 80px;
+        padding: 15px 30px;
+        margin-top: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5px;
+        align-self: stretch;
+        border-radius: 20px;
+        background: #fff;
+        display: flex;
+        
+        &__item {
+            border-radius: 4px;
+            background: #DDE6F7;
+            padding: 5px;
+            width: 100%;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+  }
 }
 
 @media (max-width: 1100px) {
-  .header {
-    &__container {
-      display: none;
+    .header {
+        padding: 14px 0;
+        position: relative;
+        z-index: 100000;
+
+        transition: 0.3s background;
+        
+        &.active {
+            position: fixed;
+            background: #425EF1;
+        }
+
+
+        &__mobile__menu {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            background: #F2F6FD;
+            height: calc(100vh - 64px);
+            overflow: hidden;
+            overflow-y: auto;
+            z-index: 10000;
+            padding: 30px 16px;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+            left: -100%;
+            transition: 0.3s left;
+
+            &.active {
+                left: 0%;
+
+            }
+
+            .header__navigation {
+                gap: 0;
+                width: 100%;
+                height: max-content;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                &__item {
+                    width: 100%;
+                    height: max-content;
+                }
+
+                &__text {
+                    display: block;
+                    width: 100%;
+                    padding: 15px 0;
+                    color: #000;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 140%; /* 25.2px */
+                    border-bottom: 1px solid #9BA1B3;
+                }
+            }
+            .header__mobile__contacts {
+                margin-top: 20px;
+            }            
+            .header__mobile__info {
+                color: #7D849A;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 140%; /* 22.4px */
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                address {
+                    font-style: normal; 
+                }
+            }
+        }
+
+        &__container {
+            display: none;
+
+            &__mobile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .phone-icon, .menu-icon {
+                    background: #fff;
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .logo {
+                    width: 98px;
+                    height: 36px
+                }
+            }
+        }
     }
-  }
 }

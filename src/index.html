@@ -66,6 +66,82 @@
             </div>
           </div>
         </div>
+        <div class="container header__container__mobile">
+            <span class="phone-icon"></span>
+            <a href="#" class="logo">
+                <img src="./images/icons/logo.svg" alt="logo">
+              </a>
+            <span class="menu-icon"></span>
+        </div>
+        <div class="header__mobile__menu">
+            <label class="input__wrapper">
+                <input type="text" class="input" placeholder="Поиск">
+            </label>
+            <nav>
+                <ul class="header__navigation">
+                    <li class="header__navigation__item active">
+                        <a href="#" class="header__navigation__text">
+                            Каталог
+                        </a>
+                    </li>
+                    <li class="header__navigation__item">
+                        <a href="#" class="header__navigation__text">
+                            Автокредит
+                        </a>
+                    </li>
+                    <li class="header__navigation__item">
+                        <a href="#" class="header__navigation__text">
+                            Trade-In
+                        </a>
+                    </li>
+                    <li class="header__navigation__item">
+                        <a href="#" class="header__navigation__text">
+                            Выкуп
+                        </a>
+                    </li>
+                    <li class="header__navigation__item">
+                        <a href="#" class="header__navigation__text">
+                            Акции
+                        </a>
+                    </li>
+                    <li class="header__navigation__item">
+                        <a href="#" class="header__navigation__text">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div>
+                <div class="header__mobile__info">
+                    <address>г. Краснодар, Республика Адыгея, посёлок Яблоновский, улица Краснодарская, 3</address>
+                    <span>Время работы: с 9:00 до 18:00</span>
+                </div>
+                <a href="tel:79999999999" class="header__mobile__contacts button button-outline size-l">+7 999 999-99-99</a>
+            </div>
+        </div>
+        <div class="header__search__container">
+            <div class="container header__search">
+                <label class="input__wrapper">
+                    <input type="text" class="input" placeholder="Искать по маркам, моделям, типу кузова">
+                </label>
+                <button class="button button-main size-l header__search__button">Найти</button>
+                <span class="cross-icon"></span>
+            </div>
+            <div class="container header__search__result">
+                <div class="header__search__result__item">
+                    Lada
+                </div>
+                <div class="header__search__result__item">
+                    Lada
+                </div>
+                <div class="header__search__result__item">
+                    Lada
+                </div>
+                <div class="header__search__result__item">
+                    Lada
+                </div>
+            </div>
+        </div>
     </header>
     <div class="main-bg"></div>
     <div class="content">
@@ -77,21 +153,21 @@
         <div class="main__search">
           <div class="main__search__select__container">
             <select class="select main__search__select menu-text">
-              <option>Select Country</option>
+              <option>Все марки</option>
+              <option>Australia</option>
+              <option>New Zealand</option>
+              <option>United Kingdom</option>
+              <option>United States</option>
+            </select>
+            <select class="select main__search__select menu-text" disabled>
+              <option>Все модели</option>
               <option>Australia</option>
               <option>New Zealand</option>
               <option>United Kingdom</option>
               <option>United States</option>
             </select>
             <select class="select main__search__select menu-text">
-              <option>Select Country</option>
-              <option>Australia</option>
-              <option>New Zealand</option>
-              <option>United Kingdom</option>
-              <option>United States</option>
-            </select>
-            <select class="select main__search__select menu-text">
-              <option>Select Country</option>
+              <option>до 5 500 000 ₽</option>
               <option>Australia</option>
               <option>New Zealand</option>
               <option>United Kingdom</option>
@@ -243,13 +319,13 @@
                 <span class="brand__item__name">Audi</span>
                 <span class="brand__item__count">123</span>
               </div>
-              <div class="brand__item">
+              <div class="brand__item ">
                 <span class="brand__item__logo"></span>
                 <span class="brand__item__name">Audi</span>
                 <span class="brand__item__count">123</span>
               </div>
             </div>
-            <div class="brands__button button button-outline size-l">Показать все</div>
+            <div class="brands__button button button-outline size-l show-more-btn">Показать все</div>
           </div>
         </div>
       </section>

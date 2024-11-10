@@ -30,7 +30,7 @@
   &__wrapper {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
     justify-content: center;
     row-gap: 40px;
     column-gap: 20px; 
@@ -59,6 +59,10 @@
 
     .title__link {
       display: none;
+    }
+
+    &__wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
     }
   }
 }
