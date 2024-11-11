@@ -5,16 +5,41 @@
   font-weight: 500;
   line-height: 140%;
   border-radius: 20px;
+  border: 1px solid transparent;
   background: #FFF;
+  transition: 0.3s all;
 
+  &.error {
+    border: 1px solid #d02d2d;
+    color: #d02d2d;
+  }
+  
   &::placeholder {
     color: #9BA1B3;
   }
 
   &__wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: 0.3s all;
+    min-height: 98px;
+
+    span.error {
+        position: absolute;
+        font-size: 12px;
+        line-height: 12px;
+        bottom: 0;
+        color: #d02d2d;
+    }
+
+    &:has(.input.error) {
+        .small-text {
+            color: #d02d2d;
+            transition: 0.3s all;
+        }
+    }
   }
 }
 

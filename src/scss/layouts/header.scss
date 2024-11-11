@@ -39,6 +39,19 @@
       font-weight: 500;
       line-height: 140%; /* 25.2px */
     }
+
+    &__item {
+        border-bottom: 1px solid transparent;
+        transition: 0.3s all;
+        
+        &:hover {
+            border-bottom: 1px solid #FFFFFF50;
+        }
+
+        &.active {
+            border-bottom: 1px solid #FFFFFF;
+        }
+    }
   }
 
   &__address {

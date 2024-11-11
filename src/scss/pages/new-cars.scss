@@ -41,6 +41,10 @@
     margin-bottom: 40px;
     max-width: calc(100vw - 160px);
     padding: 0 10px;
+
+    .car-item {
+        max-width: 340px;
+    }
   }
 
   &__pagination { 
