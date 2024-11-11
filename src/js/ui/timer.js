@@ -18,7 +18,7 @@ export default class Timer {
     if (diff <= 0) {
       clearInterval(this.timerId);
     }
-
+    //test
     const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
     const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
     const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
