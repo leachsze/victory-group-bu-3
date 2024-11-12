@@ -101,31 +101,25 @@
                 </div>
             </div>
             <section class=" credit-main">
-                <div class="credit-main__wrapper">
+                <form class="credit-main__wrapper js-form-validator">
+                    <input type="hidden" data-car-mark name="mark" value=""/>
+                    <input type="hidden" data-car-model name="model" value=""/>
+                    <input type="hidden" data-car-mileage name="mileage" value=""/>
+                    <input type="hidden" data-car-price name="price" value=""/>
+                    <input type="hidden" data-car-year name="year" value=""/>
+                    <input type="hidden" data-car-name name="car" value=""/>
                     <div class="credit-main__step credit-main__first">
                         <div class="credit-main__step__title">
                             <div class="credit-main__circle"></div>
                             <h3 class="title-s">Выбрать автомобиль</h3>
                         </div>
                         <div class="credit-main__select__wrapper">
-                            <select name="" id="" class="select">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            <select disabled name="" id="" class="select">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                            <select disabled name="" id="" class="select">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+                            <select name="mark" class="select credit-js-select-marks"></select>
+                            <select disabled name="model" class="select credit-js-select-models"></select>
+                            <select disabled name="car" class="select credit-js-select-cars"></select>
                         </div>
                         <div class="credit-main__preview">
-                            <img src="./images/content/preview-car.png" alt="car">
+                            <img src="{{ frontend_url() }}/images/content/preview-car.png" alt="car">
                         </div>
                     </div>
                     <div class="credit-main__step">
@@ -151,7 +145,7 @@
                             <div class="credit-conditions__settings__range">
                               <div class="range__top">
                                 <span class="range__title menu-text">Первоначальный взнос</span>
-                                <input class="range__value js-digits-mask body-bold" id="first-payment-value" value="1000000" type="text" data-inputmask-suffix=" ₽" inputmode="decimal"/>
+                                <input class="range__value js-digits-mask body-bold" id="first-payment-value" readonly value="1000000" type="text" data-inputmask-suffix=" ₽" inputmode="decimal"/>
                               </div>
                               <label class="range__wrapper">
                                 <input class="range" id="first-payment-input" type="range" min="0" max="7000000" value="100000">
@@ -169,30 +163,30 @@
                                 <span class="title-s">6%</span>
                             </div>
                             <div class="credit-main__credit-info__item">
-                                <span class="menu-text">Срок кредитования:</span>
-                                <span class="title-s">0 месяцев</span>
+                                <span class="menu-text">Цена:</span>
+                                <span class="title-s" data-car-price id="car-price-sum-value" data-value="0">0 ₽</span>
                             </div>
                             <div class="credit-main__credit-info__item">
-                                <span class="menu-text">Первоначальный взнос:</span>
-                                <span class="title-s">0%</span>
+                                <span class="menu-text">Сумма кредита:</span>
+                                <span class="title-s" id="credit-sum-value">0 ₽</span>
                             </div>
                             <div class="credit-main__credit-info__item">
                                 <span class="menu-text">Ваш платёж:</span>
-                                <span class="title-s">0 ₽</span>
+                                <span class="title-s" id="month-payment-value">0 ₽</span>
                             </div>
                         </div>
                     </div>
                     <div class="credit-main__step">
-                        <form class="credit-main__form">
+                        <div class="credit-main__form">
                             <h4 class="title-s">Отправить заявку</h4>
                             <div class="credit-main__form__container">
                                 <label class="input__wrapper">
                                     <span class="input__label small-text">Ваше имя</span>
-                                    <input type="text" class="input" placeholder="Имя">
+                                    <input type="text" class="input" name='name' placeholder="Имя">
                                 </label>
                                 <label class="input__wrapper">
-                                    <span class="input__label small-text">Телефон</span>
-                                    <input type="text" class="input" placeholder="+7 900 000-00-00">
+                                    <span class="input__label small-text js-phone-mask">Телефон</span>
+                                    <input type="text" name='telephone' class="input" placeholder="+7 900 000-00-00">
                                 </label>
                                 <label class="checkbox__wrapper">
                                     <input type="checkbox" class="checkbox">
@@ -200,9 +194,9 @@
                                 </label>
                                 <button class="button button-main size-l">Оставить заявку</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
 
                 <div class="main__banner__wrapper">
                     <div class="main__banner casko">

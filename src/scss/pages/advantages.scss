@@ -4,7 +4,20 @@
     padding-top: 80px;
     padding-bottom: 80px;
     background: #F2F6FD;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    background-image: url("../images/content/advantages-image.svg");
+    position: relative;
 
+    &__image {
+        position: absolute;
+        right: 80px;
+        bottom: 86px;
+        width: 800px;
+        height: 493px;
+        object-fit: contain;
+    }
     .title__container {
         margin-bottom: 40px;
     }

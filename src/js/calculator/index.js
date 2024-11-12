@@ -1,12 +1,6 @@
 export default class CreditCalculator {
   monthPayment = 30_000;
 
-  monthPaymentGap = 6;
-
-  autocreditMinSum = 100_000;
-
-  autocreditMaxSum = 5_000_000;
-
   carPrice = 7_000_000;
 
   creditSum = 4_000_000;
@@ -21,62 +15,36 @@ export default class CreditCalculator {
 
   monthPaymentValue = $('#month-payment-value');
 
-  type = 'CreditOnly' || 'CreditCar';
-
   creditPeriod = 6;
 
   constructor() {
-    this.carPrice = +$('#credit-sum-value').data('value');
+    this.carPrice = +$('#car-price-sum-value').data('value');
     this.creditTotal = +$('#credit-sum-value').data('value');
-    this.type = Number.isNaN(this.carPrice) ? 'CreditOnly' : 'CreditCar';
 
-    this.sumRange.attr('min', this[`setupSumRangeMin${this.type}`]());
-    this.sumRange.attr('max', this[`setupSumRangeMax${this.type}`]());
+    this.sumRange.attr('min', this.setupSumRangeMin());
+    this.sumRange.attr('max', this.setupSumRangeMax());
 
     this.creditPeriodEvent(this.periodRange.val());
     this.creditSumEvent(+this.sumRange.val());
-    this.monthPaymentListeners();
     this.creditPeriodListener();
     this.sumListeners();
   }
 
-  setupSumRangeMinCreditOnly() {
-    return 100000;
-  }
-
-  setupSumRangeMinCreditCar() {
+  setupSumRangeMin() {
     return 0;
   }
 
-  setupSumRangeMaxCreditOnly() {
-    return 5000000;
-  }
-
-  setupSumRangeMaxCreditCar() {
+  setupSumRangeMax() {
     return this.carPrice * 0.9;
-  }
-
-  monthPaymentListeners() {
-    $('#minus-month-payment').on('click', () => this.changeMonthPayment(+this.monthPaymentGap));
-    $('#plus-month-payment').on('click', () => this.changeMonthPayment(-this.monthPaymentGap));
   }
 
   sumListeners() {
     this.sumRange.on('input', (event) => this.creditSumEvent(event.currentTarget.value));
-    this.sumValue.on('change', (event) => {
-      const target = $(event.currentTarget);
-      const value = target.val().replace(/[^\d.]/g, '');
-      const currentValue = this.validateValue(value);
-      target.val(currentValue);
-
-      this.sumRange.val(currentValue);
-      this.sumRange.trigger('input');
-    });
   }
 
   creditSumEvent(val) {
-    this.creditSum = this[`calculateSumValue${this.type}`](val);
-    this.monthPayment = this[`calculateMonthPayment${this.type}`]();
+    this.creditSum = this.calculateSumValue(val);
+    this.monthPayment = this.calculateMonthPayment();
     this.updatePaymentValues();
 
     this.updateSumValue();
@@ -88,15 +56,9 @@ export default class CreditCalculator {
 
   creditPeriodEvent(val) {
     this.creditPeriod = +val;
-    this.monthPayment = this[`calculateMonthPayment${this.type}`]();
+    this.monthPayment = this.calculateMonthPayment();
     this.updatePaymentValues();
     this.updateCreditPeriod();
-  }
-
-  changeMonthPayment(amount) {
-    this.creditPeriod += amount;
-    this.periodRange.val(this.creditPeriod);
-    this.periodRange.trigger('change');
   }
 
   convertPrice(price) {
@@ -106,6 +68,7 @@ export default class CreditCalculator {
 
   updatePaymentValues() {
     this.monthPaymentValue.text(this.convertPrice(this.monthPayment));
+    $('#credit-sum-value').text(this.convertPrice(this.carPrice - this.creditSum));
   }
 
   validateValue(value) {
@@ -123,27 +86,15 @@ export default class CreditCalculator {
     return value;
   }
 
-  calculatePeriodValueCreditCar() {
+  calculatePeriodValue() {
     return (this.carPrice - this.firstPayment) / this.monthPayment;
   }
 
-  calculatePeriodValueCreditOnly() {
-    return Math.round(this.creditSum / this.monthPayment);
-  }
-
-  calculateMonthPaymentCreditOnly() {
-    return Math.round(this.creditSum / this.creditPeriod);
-  }
-
-  calculateMonthPaymentCreditCar() {
+  calculateMonthPayment() {
     return Math.round((this.carPrice - this.creditSum) / this.creditPeriod);
   }
 
-  calculateSumValueCreditOnly(val) {
-    return val;
-  }
-
-  calculateSumValueCreditCar(val) {
+  calculateSumValue(val) {
     $('#credit-sum-value').text(this.convertPrice(this.creditTotal - val));
     return val;
   }
@@ -154,5 +105,9 @@ export default class CreditCalculator {
 
   updateSumValue() {
     this.sumValue.val(this.creditSum);
+  }
+
+  reloadCarPrice() {
+    this.carPrice = +$('#car-price-sum-value').data('value');
   }
 }

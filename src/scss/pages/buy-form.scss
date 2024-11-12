@@ -7,6 +7,8 @@
     background: #DDE6F7;
     border-radius: 20px;
     width: fit-content;
+    position: relative;
+    z-index: 1;
 
     &__items {
         display: flex;
