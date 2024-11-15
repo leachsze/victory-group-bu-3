@@ -33,7 +33,6 @@ import 'swiper/css/bundle';
 import '../scss/app.scss';
 import CreditCalculator from './calculator/index.js';
 import ReviewForm from './customForm/ReviewForm.js';
-import TimerOffer from './ui/offerTimer.js';
 import CallbackWidget from './callback/index.js';
 import Swipers from './swipers/index.js';
 
@@ -200,11 +199,13 @@ window.app = {
       $('.header__mobile__menu').toggleClass('active');
     });
 
-    $('.search-icon').on('click', () => {
+    $('.button__search').on('click', () => {
       $('.header__search__container').addClass('active');
+      $('.header__search__wrapper').addClass('active');
     });
 
     $('.header__search .cross-icon').on('click', () => {
+      $('.header__search__wrapper').removeClass('active');
       $('.header__search__container').removeClass('active');
     });
 
@@ -371,24 +372,41 @@ window.app = {
       });
     });
   },
-  runOfferBanner: () => {
-    const isHidden = window.sessionStorage.getItem('isOfferBannerHidden');
+  runFavourite: () => {
+    $('#clear-favourite-list').on('click', () => {
+      $('.car-item ').remove();
+      $.cookie('favourites', []);
+    });
 
-    const timer = new TimerOffer(configuration.timerDate, '.offer-banner__timer');
-    timer.countdownTimer();
-    const timerUpdateAction = timer.countdownTimer.bind(timer);
-    timer.timerId = setInterval(timerUpdateAction, 1000);
+    $('.button__favourite').on('click', () => {
+      window.location.href = '/favourites';
+    });
 
-    if (!isHidden) {
-      $('.offer-banner__section').show();
+    if ($.cookie('favourites') == null) {
+      $.cookie('favourites', []);
     }
 
-    $('.offer-banner__close').on('click', () => {
-      window.sessionStorage.setItem('isOfferBannerHidden', 'true');
-      $('.offer-banner__section').hide();
+    $('.car-item__fav__badge').on('click', (event) => {
+      event.preventDefault();
+      const target = $(event.currentTarget);
+      const id = target.data('favourite-id');
+      let favourites = $.cookie('favourites').split(',');
+      favourites = $.grep(favourites, function(n) { return (n === 0 || n) && n !== ''; });
+      favourites = new Set(favourites);
+
+      if (target.hasClass('active')) {
+        target.removeClass('active');
+        favourites = new Set(favourites);
+        favourites.delete(String(id));
+        $.cookie('favourites', Array.from(favourites));
+      } else {
+        favourites.add(String(id));
+        target.addClass('active');
+      }
+
+      $.cookie('favourites', Array.from(favourites));
     });
   },
-
 };
 
 window.calculator = window.app.runCalculator();
@@ -403,5 +421,5 @@ window.app.runFindByMark();
 window.app.runLazy();
 window.app.runSelect2();
 window.app.runModals();
-window.app.runOfferBanner();
 window.app.runCallbackWidget();
+window.app.runFavourite();

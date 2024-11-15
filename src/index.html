@@ -119,26 +119,20 @@
                 <a href="tel:79999999999" class="header__mobile__contacts button button-outline size-l">+7 999 999-99-99</a>
             </div>
         </div>
-        <div class="header__search__container">
-            <div class="container header__search">
-                <label class="input__wrapper">
-                    <input type="text" class="input" placeholder="Искать по маркам, моделям, типу кузова">
-                </label>
-                <button class="button button-main size-l header__search__button">Найти</button>
-                <span class="cross-icon"></span>
-            </div>
-            <div class="container header__search__result">
-                <div class="header__search__result__item">
-                    Lada
+        <div class="header__search__wrapper">
+            <div class="header__search__backdrop"></div>
+            <div class="header__search__container">
+                <div class="container header__search">
+                    <label class="input__wrapper">
+                        <input type="text" class="input" placeholder="Искать по маркам, моделям, типу кузова">
+                    </label>
+                    <button class="button button-main size-l header__search__button">Найти</button>
+                    <span class="cross-icon"></span>
                 </div>
-                <div class="header__search__result__item">
-                    Lada
-                </div>
-                <div class="header__search__result__item">
-                    Lada
-                </div>
-                <div class="header__search__result__item">
-                    Lada
+                <div class="container header__search__result">
+                    <div class="header__search__result__content">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -1010,7 +1004,47 @@
           <div class="banks__item"></div>
         </div>
       </section>
+
+      <button class="js-open-modal" data-modal-template="callback-modal">open callback</button>
+    <div class="modal" id="callback-modal">
+        <div class="modal__wrapper">
+            <div class="modal__header">
+                    <span class="modal__title">Оставить заявку на звонок</span>
+                    <span class="modal__text">Наш менеджер свяжется с вами в течение 5 минут</span>
+            </div>
+            <div class="modal__content">
+                <form class="js-form-validator modal__form">
+                    <label class="input__wrapper">
+                        <span class="input__label small-text">Ваше имя</span>
+                        <input type="text" class="input" name='name' placeholder="Имя">
+                    </label>
+                    <label class="input__wrapper">
+                        <span class="input__label small-text ">Телефон</span>
+                        <input type="text" name='telephone' class="input js-phone-mask" placeholder="+7 900 000-00-00">
+                    </label>
+                    <label class="checkbox__wrapper">
+                        <input type="checkbox" class="checkbox">
+                        <span class="checkbox__label small-text">Я согласен с политикой конфиденциальности и даю согласие на обработку персональных данных</span>
+                    </label>
+                    <button class="button button-main size-l">Оставить заявку</button>
+                </form>
+
+                <div class="modal__info">
+                    <div class="modal__image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="modal__info__text">
+                        <div>
+                            <span class="modal__model">Chery Tiggo 4 Pro 18 YEARS EDITION</span>
+                            <span class="modal__year">2009 г.</span>
+                        </div>
+                        <span class="modal__price">1 235 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    </div>    
     <footer class="footer">
       <section class="container footer__form__container">
         <form action="" class="footer__form">

@@ -18,7 +18,6 @@ export default class Timer {
     if (diff <= 0) {
       clearInterval(this.timerId);
     }
-    //test
     const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
     const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
     const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
@@ -28,14 +27,14 @@ export default class Timer {
       this.$days.hide();
     }
 
-    this.$days.find('.header-text-l').text(days < 10 ? '0' + days : days);
-    this.$hours.find('.header-text-l').text(hours < 10 ? '0' + hours : hours);
-    this.$minutes.find('.header-text-l').text(minutes < 10 ? '0' + minutes : minutes);
-    this.$seconds.find('.header-text-l').text(seconds < 10 ? '0' + seconds : seconds);
+    this.$days.find('.timer-number').text(days < 10 ? '0' + days : days);
+    this.$hours.find('.timer-number').text(hours < 10 ? '0' + hours : hours);
+    this.$minutes.find('.timer-number').text(minutes < 10 ? '0' + minutes : minutes);
+    this.$seconds.find('.timer-number').text(seconds < 10 ? '0' + seconds : seconds);
 
-    this.$days.find('.regular-text-m').text(this.declensionNum(days, ['день', 'дня', 'дней']));
-    this.$hours.find('.regular-text-m').text(this.declensionNum(hours, ['час', 'часа', 'часов']));
-    this.$minutes.find('.regular-text-m').text(this.declensionNum(minutes, ['минута', 'минуты', 'минут']));
-    this.$seconds.find('.regular-text-m').text(this.declensionNum(seconds, ['секунда', 'секунды', 'секунд']));
+    this.$days.find('.timer-text').text(this.declensionNum(days, ['день', 'дня', 'дней']));
+    this.$hours.find('.timer-text').text(this.declensionNum(hours, ['час', 'часа', 'часов']));
+    this.$minutes.find('.timer-text').text(this.declensionNum(minutes, ['минута', 'минуты', 'минут']));
+    this.$seconds.find('.timer-text').text(this.declensionNum(seconds, ['секунда', 'секунды', 'секунд']));
   }
 }
