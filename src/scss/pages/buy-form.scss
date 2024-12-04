@@ -1,6 +1,6 @@
 .buy__form {
     margin-top: 40px;
-    padding: 80px 60px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -30,6 +30,18 @@
         
         .input__wrapper {
             max-width: 342px;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .buy__form {
+        width: 100%;
+        padding: 40px 20px;
+        gap: 20px;
+
+        &__items {
+            flex-direction: column;
         }
     }
 }

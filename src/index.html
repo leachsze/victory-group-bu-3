@@ -144,21 +144,44 @@
           <h1 class="title-l main__title">Купить автомобиль</h1>
           <span class="title-s main__subtitle">Более 1234 автомобилей с пробегом</span>
         </div>
-        <div class="main__search">
+        <div class="main__search filter" id="filter" data-filter-form>
           <div class="main__search__select__container">
-            <select class="select main__search__select menu-text">
-              <option>Все марки</option>
-              <option>Australia</option>
-              <option>New Zealand</option>
-              <option>United Kingdom</option>
-              <option>United States</option>
+            <select class="select main__search__select menu-text" name="mark" data-change-mark>
+                <option value="0" data-right-text="8344" selected="">Все марки</option>
+                <option value="9" data-right-text="1467">Kia</option>
+                <option value="16" data-right-text="1157">Hyundai</option>
+                <option value="22" data-right-text="742">Skoda</option>
+                <option value="18" data-right-text="708">Nissan</option>
+                <option value="43" data-right-text="691">Renault</option>
+                <option value="10" data-right-text="685">Volkswagen</option>
+                <option value="41" data-right-text="670">Lada (ВАЗ)</option>
+                <option value="19" data-right-text="504">Ford</option>
+                <option value="8" data-right-text="239">Mitsubishi</option>
+                <option value="20" data-right-text="215">Opel</option>
+                <option value="6" data-right-text="198">Mazda</option>
+                <option value="40" data-right-text="184">Toyota</option>
+                <option value="1" data-right-text="150">Chery</option>
+                <option value="38" data-right-text="148">Chevrolet</option>
+                <option value="23" data-right-text="83">Geely</option>
+                <option value="26" data-right-text="73">Suzuki</option>
+                <option value="42" data-right-text="67">Peugeot</option>
+                <option value="29" data-right-text="67">SsangYong</option>
+                <option value="12" data-right-text="64">Volvo</option>
+                <option value="28" data-right-text="43">Haval</option>
+                <option value="46" data-right-text="37">УАЗ</option>
+                <option value="45" data-right-text="29">Honda</option>
+                <option value="54" data-right-text="27">Lifan</option>
+                <option value="60" data-right-text="22">Datsun</option>
+                <option value="17" data-right-text="19">Subaru</option>
+                <option value="50" data-right-text="17">SEAT</option>
+                <option value="37" data-right-text="14">Changan</option>
+                <option value="71" data-right-text="11">FAW</option>
+                <option value="63" data-right-text="5">Ravon</option>
+                <option value="51" data-right-text="4">Daewoo</option>
+                <option value="47" data-right-text="4">Great Wall</option>
             </select>
-            <select class="select main__search__select menu-text" disabled>
+            <select class="select main__search__select menu-text" name="model" disabled data-change-model>
               <option>Все модели</option>
-              <option>Australia</option>
-              <option>New Zealand</option>
-              <option>United Kingdom</option>
-              <option>United States</option>
             </select>
             <select class="select main__search__select menu-text">
               <option>до 5 500 000 ₽</option>
@@ -168,7 +191,7 @@
               <option>United States</option>
             </select>
           </div>
-          <button class="button button-main size-l">Показать 1234 авто</button>
+          <button class="button button-main size-l" data-filter-btn>Показать 1234 авто</button>
         </div>
         <div class="main__banner__wrapper">
           <div class="main__banner casko">

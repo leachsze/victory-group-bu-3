@@ -54,6 +54,13 @@
         color: #425EF1;
     }
 
+    &.badge-stock {
+        left: 10px;
+        top: 45px;
+        background: #FF4242;
+        color: var(---1-White, #FFF);
+    }
+
   }
  
   &__image {
@@ -146,10 +153,61 @@
   }
 
   &__price {
+    &.stock {
+        color: #FF4242;
+    }
+
+    &__old {
+        color: rgba(0, 0, 0, 0.50);
+        text-decoration: line-through;
+    }
+
     &__wrapper {
       display: flex;
       flex-direction: column;
-      gap: 10px;      
+      gap: 10px;
+
+      .tooltip {
+        position: absolute;
+        top: 0;
+        left: calc(100% + 4px);
+
+        &__icon {
+            cursor: pointer;
+        }
+
+        .tooltip__icon:hover + .tooltip__body {
+            display: block;
+        }
+
+        &__body {
+            display: none;
+            bottom: calc(100% + 4px);
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 14px;
+            font-weight: 500;
+            height: 47px;
+            padding: 15px 20px 24px;
+            background: #000;
+            color: #fff;
+            position: absolute;
+            width: fit-content;
+            white-space: nowrap;
+        }
+      }
+      
+      .catalog-price {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+
+      div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 

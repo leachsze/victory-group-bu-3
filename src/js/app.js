@@ -12,6 +12,7 @@ import $ from 'jquery';
 
 // Select2
 import 'select2/dist/js/select2.full.js';
+import 'select2/dist/js/i18n/ru.js';
 
 // Fancybox
 import { Fancybox } from '@fancyapps/ui';
@@ -23,7 +24,7 @@ import Timer from './ui/timer.js';
 import Tab from './ui/tabs.js';
 
 // config file
-import configuration from './configuration.js';
+// import configuration from './configuration.js';
 
 // import styles
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
@@ -35,6 +36,7 @@ import CreditCalculator from './calculator/index.js';
 import ReviewForm from './customForm/ReviewForm.js';
 import CallbackWidget from './callback/index.js';
 import Swipers from './swipers/index.js';
+import Filter from './filter/index.js';
 
 window.$ = $;
 // window.configuration = configuration;
@@ -44,11 +46,14 @@ window.app = {
   runCalculator: () => new CreditCalculator(),
   runCallbackWidget: () => new CallbackWidget('var(--blue-main)', () => $('#callback-modal').modal({ fadeDuration: 100 })),
   runSelect2: () => {
-    $('.select').not('.credit-js-select-marks').select2();
+    $('.select').not('.credit-js-select-marks').select2({
+      language: 'ru',
+    });
     // const url = document.location.origin;
     const url = 'https://bu-3.vitmp.ru';
     let cars = [];
     $('.credit-js-select-marks').select2({
+      language: 'ru',
       placeholder: 'Выберите значение',
       ajax: {
         dataType: 'json',
@@ -74,6 +79,7 @@ window.app = {
       $('.credit-js-select-cars').val(null).trigger('change');
       if (event.currentTarget.value) {
         $('.credit-js-select-models').select2({
+          language: 'ru',
           placeholder: 'Выберите значение',
           ajax: {
             dataType: 'json',
@@ -373,9 +379,11 @@ window.app = {
     });
   },
   runFavourite: () => {
-    $('#clear-favourite-list').on('click', () => {
+    $('#clear-favourite-list ').on('click', () => {
       $('.car-item ').remove();
       $.cookie('favourites', []);
+      $('.new-cars__container').hide();
+      $('.favourites__not-found').show();
     });
 
     $('.button__favourite').on('click', () => {
@@ -407,10 +415,13 @@ window.app = {
       $.cookie('favourites', Array.from(favourites));
     });
   },
+
+  runFilter: () => new Filter(),
 };
 
 window.calculator = window.app.runCalculator();
 window.app.runFormsValidation();
+window.app.runFilter();
 window.app.runFancybox();
 window.app.runTabs();
 window.app.runMasks();

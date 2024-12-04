@@ -58,3 +58,19 @@
         }
     }
 }
+
+@media(max-width: 1100px) {
+    .steps {
+        &__wrapper {
+            grid-template-columns: repeat(1, 100%);
+        }
+
+        &__item {
+            padding: 20px;
+
+            &__body {
+                max-width: 100%;
+            }
+        }
+    }
+}

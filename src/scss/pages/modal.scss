@@ -1,4 +1,18 @@
 .modal {
+    &#callback-modal {
+        .modal__content {
+            justify-content: center;
+        }
+
+        .modal__wrapper {
+            max-width: 614px;
+        }
+
+        .modal__form {
+            max-width: none;
+        }
+    }
+
     &__wrapper {
         padding: 40px;
         display: flex;
