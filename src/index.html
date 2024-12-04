@@ -1006,7 +1006,7 @@
           </div>
         </div>
       </section>
-      <section class="banks">
+      <!-- <section class="banks">
         <div class="container title__container">
           <h3 class="title__text title-m">
             Банки партнёры
@@ -1026,9 +1026,29 @@
           <div class="banks__item"></div>
           <div class="banks__item"></div>
         </div>
-      </section>
+      </section> -->
 
-      <button class="js-open-modal" data-modal-template="callback-modal">open callback</button>
+    <button class="js-open-modal" data-modal-template="callback-modal">open callback</button>
+    <button class="js-open-modal" data-modal-template="vin-modal">open vin</button>
+    <button class="js-open-modal" data-modal-template="success-modal">open success</button>
+    <div class="modal vin-modal" id="success-modal">
+        <div class="modal__wrapper">
+            <div class="modal__header">
+                <span class="modal__title title-m">Ваша заявка успешно отправлена!</span>
+                <span class="modal__text body-text">Мы свяжемся с вами в ближайшее время</span>
+                <a href="javascript:;" rel="modal:close" class="button button-main size-m">Хорошо</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal vin-modal" id="vin-modal">
+        <div class="modal__wrapper">
+            <div class="modal__header">
+                    <span class="modal__title">Проверка VIN в автотеке</span>
+                    <span class="modal__text">Подождите, собираем данные <br> и формируем отчёт</span>
+                    <span class="small-text"> осталось 02:58</span>
+            </div>
+        </div>
+    </div>
     <div class="modal" id="callback-modal">
         <div class="modal__wrapper">
             <div class="modal__header">

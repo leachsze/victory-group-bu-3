@@ -13,6 +13,37 @@
         }
     }
 
+    &.vin-modal {
+        border-radius: 60px;
+        height: 573px;
+        width: 100%;
+        max-width: 1118px;
+        background: url("../images/content/vin-car.png"), #fff;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .close-modal {
+            top: 40px;
+            right: 40px;
+        }
+
+        .modal__wrapper {
+            padding: 60px 60px 100px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal__header {
+            margin-top: 64px;
+        }
+
+        .button-main {
+            width: fit-content;
+        }
+    }
+
     &__wrapper {
         padding: 40px;
         display: flex;
@@ -103,5 +134,38 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+    }
+} 
+
+@media (max-width: 1100px) {
+    .modal {
+        &.vin-modal {
+            border-radius: 40px;
+            max-width: 328px;
+            height: auto;
+            background-size: contain;
+
+            .close-modal {
+                top: 20px;
+                right: 20px;
+            }
+
+            .modal__header {
+                margin-top: 0;
+            }
+
+            .modal__wrapper {
+                padding: 20px 36px 100px 20px;
+            }
+
+            .modal__title {
+                font-size: 22px;
+            }
+
+            .modal__text {
+                font-size: 13px;
+                font-weight: 400;
+            }
+        }
     }
 }
