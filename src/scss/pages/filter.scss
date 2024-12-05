@@ -9,7 +9,7 @@
     gap: 20px;
     height: fit-content;
     grid-column: auto / span 1;
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 8;
 
     &__buttons {
         display: flex;
@@ -73,10 +73,16 @@
 
 @media (max-width: 1100px) {
     .filter {
-        position: static;
+        position: sticky;
     }
 
     .filter__toggle {
         display: none;
+    }
+}
+
+@media (max-width: 695px) {
+    .filter {
+        position: static;
     }
 }

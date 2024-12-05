@@ -156,6 +156,20 @@
   background-color: $white;
 }
 
+.check-circle-icon {
+  mask-image: url("../images/icons/check-circle-icon.svg");
+  -webkit-mask-image: url("../images/icons/check-circle-icon.svg");
+  background-color: #000;
+}
+
+.chevron-icon {
+  mask-image: url("../images/icons/chevron-icon.svg");
+  -webkit-mask-image: url("../images/icons/chevron-icon.svg");
+  background-color: #000;
+}
+
+.chevron-icon,
+.check-circle-icon,
 .favourite-icon,
 .compare-icon,
 .video-icon,

@@ -1,3 +1,5 @@
+import Helper from '../helper/index.js';
+
 export default class CreditCalculator {
   monthPayment = 30_000;
 
@@ -61,14 +63,13 @@ export default class CreditCalculator {
     this.updateCreditPeriod();
   }
 
-  convertPrice(price) {
-    const formatter = new Intl.NumberFormat('ru');
-    return formatter.format(price) + ' ₽';
+  convertPrice() {
+
   }
 
   updatePaymentValues() {
-    this.monthPaymentValue.text(this.convertPrice(this.monthPayment));
-    $('#credit-sum-value').text(this.convertPrice(this.carPrice - this.creditSum));
+    this.monthPaymentValue.text(Helper.convertPrice(this.monthPayment));
+    $('#credit-sum-value').text(Helper.convertPrice(this.carPrice - this.creditSum));
   }
 
   validateValue(value) {

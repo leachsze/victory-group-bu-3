@@ -1,4 +1,6 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-eval */
+
 // JQuery modules
 import 'jquery.inputmask';
 import 'jquery-lazy';
@@ -37,6 +39,7 @@ import ReviewForm from './customForm/ReviewForm.js';
 import CallbackWidget from './callback/index.js';
 import Swipers from './swipers/index.js';
 import Filter from './filter/index.js';
+import Vin from './vin/index.js';
 
 window.$ = $;
 // window.configuration = configuration;
@@ -417,10 +420,12 @@ window.app = {
   },
 
   runFilter: () => new Filter(),
+  runVin: () => new Vin(),
 };
 
 window.calculator = window.app.runCalculator();
 window.app.runFormsValidation();
+window.app.runVin();
 window.app.runFilter();
 window.app.runFancybox();
 window.app.runTabs();

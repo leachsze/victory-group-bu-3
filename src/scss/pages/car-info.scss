@@ -191,12 +191,48 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        &__select {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .chevron-icon {
+                width: 24px;
+                height: 24px;
+                transition: 0.3s all;
+            }
         }
 
         &__item {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            transition: 0.3s all;
+            interpolate-size: allow-keywords;
+            cursor: pointer;
+
+            &[open] {
+                color: #425EF1;
+
+                .chevron-icon {
+                    transform: rotate(180deg);
+                    background: #425EF1;
+                }
+            }
+
+            &::details-content {
+                transition:
+                  block-size 1s, content-visibility 1s allow-discrete;
+                overflow: hidden;
+                block-size: 0;     /* Or also:  height:0; */
+            }
+
+            &[open]::details-content {
+                block-size: auto;  /* Or also:  height:auto; */
+            }
 
             &__title {
                 color: #9BA1B3;
@@ -204,6 +240,7 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: 140%; /* 22.4px */
+                transition: 0.3s all;
             }
 
             &__value {

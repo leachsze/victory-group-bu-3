@@ -1042,10 +1042,93 @@
     </div>
     <div class="modal vin-modal" id="vin-modal">
         <div class="modal__wrapper">
-            <div class="modal__header">
-                    <span class="modal__title">Проверка VIN в автотеке</span>
-                    <span class="modal__text">Подождите, собираем данные <br> и формируем отчёт</span>
-                    <span class="small-text"> осталось 02:58</span>
+            <div class="modal__header vin-first">
+                <span class="modal__title">Проверка VIN в автотеке</span>
+                <span class="modal__text">Подождите, собираем данные <br> и формируем отчёт</span>
+                <span class="small-text"> осталось <span class="vin-timer" data-vin-timer="5">00:04</span></span>
+            </div>
+            <div class="vin-second">
+                <div class="vin-second__title__container">
+                    <h3 class="title-m">Проверка VIN в автотеке</h3>
+                    <span class="body-text vin-second__date__title">
+                        Дата отчёта:
+                        <span class="body-text vin-second__date">26.11.2023</span>
+                    </span>
+                </div>
+                <div class="vin-second__vin-name__container">
+                    <h4 class="title-s">XW7BE**K90S0****7</h4>
+                    <span class="vin-second__vin-name__desc small-text">* VIN номер скрыт из соображений безопасности</span>
+                </div>
+                <div class="vin-second__spec__container">
+                    <div class="vin-second__spec__title title-s">Технические характеристики</div>
+                    <div class="vin-second__spec__wrapper">
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                        <div class="vin-second__spec__item">
+                            <div class="vin-second__spec__item__title small-text">Марка, модель</div>
+                            <div class="vin-second__spec__item__value body-text">Toyota Camry</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vin-second__spec__container">
+                    <div class="vin-second__spec__title title-s">Юридическая чистота</div>
+                    <ul class="vin-second__spec__list">
+                        <li class="vin-second__spec__list__item menu-text">
+                            <span class="check-circle-icon"></span>
+                            Ограничения на регистрационные действия: не обнаружены
+                        </li>
+                        <li class="vin-second__spec__list__item menu-text">
+                            <span class="check-circle-icon"></span>
+                            Сведения о нахождении в залоге: не обнаружены
+                        </li>
+                    </ul>
+                </div>
+                <div class="vin-second__spec__container">
+                    <div class="vin-second__spec__title title-s">Владельцы по ПТС</div>
+                    <ul class="vin-second__spec__list">
+                        <li class="vin-second__spec__list__item menu-text">
+                            <span class="check-circle-icon"></span>
+                            Количество владельцев: 4
+                        </li>
+                        <li class="vin-second__spec__list__item menu-text">
+                            <span class="check-circle-icon"></span>
+                            Сведения об использовании в такси: не обнаружены
+                        </li>
+                    </ul>
+                </div>
+                <div class="vin-second__footer">
+                    <div class="vin-second__footer__text">
+                        <h3 class="title-m">2 989 000 ₽</h3>
+                        <span class="body-text">в кредит от 30 000 ₽/мес</span>
+                    </div>
+                    <button data-modal-template="callback-modal" class="js-open-modal button button-main size-l">Купить в кредит</button>
+                </div>
             </div>
         </div>
     </div>
@@ -1078,10 +1161,10 @@
                     </div>
                     <div class="modal__info__text">
                         <div>
-                            <span class="modal__model">Chery Tiggo 4 Pro 18 YEARS EDITION</span>
-                            <span class="modal__year">2009 г.</span>
+                            <span class="modal__model">Chery Tiggo 4 Pro 18 YEARS EDITION</span>
+                            <span class="modal__year">2009 г.</span>
                         </div>
-                        <span class="modal__price">1 235 000 ₽</span>
+                        <span class="modal__price">1 235 000 ₽</span>
                     </div>
                 </div>
             </div>
