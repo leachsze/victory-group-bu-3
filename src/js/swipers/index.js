@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 export default class Swipers {
   static carItemSwipers() {
@@ -61,6 +61,25 @@ export default class Swipers {
         type: 'bullets',
         lockClass: 'swiper-hide-pagination',
       },
+    });
+  }
+
+  static giftSwiper() {
+    return new Swiper('.js-gifts-swiper', {
+      modules: [Autoplay, Pagination, Navigation],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        enabled: true,
+        nextEl: '.js-gifts-swiper .swiper-button-next',
+        prevEl: '.js-gifts-swiper .swiper-button-prev',
+        lockClass: 'swiper-hide-pagination',
+      },
+      pagination: this.defautlPagination(),
     });
   }
 

@@ -172,6 +172,7 @@ window.app = {
       groupSeparator: ' ',
       rightAlign: false,
       prefix: '',
+      clearMaskOnLostFocus: true,
     });
 
     $('.js-numeric-mask').inputmask({
@@ -184,6 +185,7 @@ window.app = {
     Swipers.carItemSwipers();
     Swipers.carItemsSwipers();
     Swipers.creditBanner();
+    Swipers.giftSwiper();
   },
   runTimers: () => {
     const timer = new Timer(configuration.timerDate, '.timer');
@@ -306,6 +308,11 @@ window.app = {
             minlength: 2,
             maxlength: 1024,
           },
+          milenage: {
+            required: true,
+            minlength: 0,
+            maxlength: 7,
+          },
           agreement: {
             required: true,
           },
@@ -314,6 +321,7 @@ window.app = {
           textarea: 'Поле должно быть заполнено',
           mark: 'Поле должно быть заполнено',
           model: 'Поле должно быть заполнено',
+          milenage: 'Поле должно быть заполнено',
           name: 'Поле должно быть заполнено',
           agreement: 'Поле должно быть заполнено',
           telephone: 'Номер телефона должен содержать 11 цифр',

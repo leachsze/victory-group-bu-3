@@ -46,17 +46,75 @@
         }
 
         &__item {
+            position: relative;
             height: 260px;
             padding: 20px;
             border-radius: 20px;
-            background: #eee;
+            background: transparent;
 
             &__title {
+                position: relative;
+                z-index: 2;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 120%; /* 24px */
             }
+        }
+
+        &__swiper {
+            max-width: 376px;
+
+            .car-info__gift__img {
+                position: absolute;
+                border-radius: 20px;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                top: 0;
+                left: 0;
+            }
+
+            .swiper-pagination {
+                padding: 0 20px;
+                top: 0;
+                width: 100% !important;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 20px;
+                @include transition;
+                gap: 5px;
+                display: flex;
+                align-items: flex-end;
+                
+                .bullet-wrapper {
+                    display: flex;
+                    align-items: flex-end;
+                    width: 100%;
+                    height: 2px;
+                    background: $white;
+                }
+                
+                .swiper-pagination-bullet {
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    min-height: 0;
+                    border-radius: 0;
+                    background: transparent !important;
+                    @include transition;
+                    align-items: flex-end;
+                
+                    &-active {
+                        .bullet-wrapper {
+                            background: #425EF1;
+                        }
+                    }
+                }
+              }
         }
     }
 
@@ -298,6 +356,12 @@
     }
 }
 
+@media (max-width: 1332px) {
+    .car-info {
+        padding: 80px 32px 40px 32px;
+    }
+}
+
 @media (max-width: 1100px) {
     .car-info { 
         flex-direction: column;
@@ -397,6 +461,10 @@
             .credit-conditions__settings__range .range__title {
                 font-size: 10px;
             }
+        }
+
+        &__gift__swiper {
+            max-width: none;
         }
     }
 }
