@@ -139,10 +139,11 @@
 
   &__spec {
     color: #808080;
+    margin-right: 16px;
     
     &__wrapper {
       display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: 15px;
     }

@@ -77,6 +77,28 @@ window.app = {
       },
     });
 
+    function formatPrice (str) {
+      return (str + '').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    }
+
+    function formatState (state) {
+      if (!state.id) {
+        return state.text;
+      }
+      const baseUrl = window.location.origin + state.common.preview[0].path;
+      const $state = $(`
+        <div class="credit-car__item">
+            <img src="${baseUrl}" class="credit-car__item__image"/>
+            <div class="credit-car__item__container">
+                <span class="credit-car__item__name">${state.common.name}</span>
+                <span class="credit-car__item__mileage">Пробег: ${formatPrice(state.common.mileage)} км</span>
+                <span class="credit-car__item__price">Цена: ${formatPrice(state.common.price)} ₽</span>
+            </div>    
+        </div>
+        `);
+      return $state;
+    }
+
     $('.credit-js-select-marks').on('change', (event) => {
       $('.credit-js-select-models').val(null).trigger('change');
       $('.credit-js-select-cars').val(null).trigger('change');
@@ -111,6 +133,7 @@ window.app = {
       if (event.currentTarget.value) {
         $('.credit-js-select-cars').select2({
           placeholder: 'Выберите значение',
+          templateResult: formatState,
           ajax: {
             dataType: 'json',
             url: `${url}/ajax/used_auto/get/cars/by/model/${event.currentTarget.value}`,
@@ -123,7 +146,7 @@ window.app = {
               cars = data;
               return {
                 results: data.map(function(item) {
-                  return { id: item.id, text: item.name };
+                  return { id: item.id, text: item.name, common: { ...item } };
                 }),
               };
             },

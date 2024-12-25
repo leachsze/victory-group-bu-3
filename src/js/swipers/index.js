@@ -16,6 +16,12 @@ export default class Swipers {
     $('.car-item__preview .swiper-pagination-bullet').hover(function() {
       $(this).trigger('click');
     });
+
+    $('.car-item__preview .swiper-pagination-bullet').on('click', (event) => {
+      if (event.pointerType === 'mouse') {
+        window.location.href = $(event.currentTarget).closest('.car-item').attr('href');
+      }
+    });
   }
 
   static carItemsSwipers() {
