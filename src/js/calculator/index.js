@@ -20,6 +20,7 @@ export default class CreditCalculator {
   creditPeriod = 6;
 
   constructor() {
+    this.percentRate = +$('#credit-percent-value').data('value');
     this.carPrice = +$('#car-price-sum-value').data('value');
     this.creditTotal = +$('#credit-sum-value').data('value');
 
@@ -92,7 +93,12 @@ export default class CreditCalculator {
   }
 
   calculateMonthPayment() {
-    return Math.round((this.carPrice - this.creditSum) / this.creditPeriod);
+    const percentRate = this.percentRate / 100;
+    const monthPercentRate = percentRate / 12;
+    const annuitet = (monthPercentRate * (1 + monthPercentRate) ** this.creditPeriod) / ((1 + monthPercentRate) ** this.creditPeriod - 1);
+
+    return Math.round((this.carPrice - this.creditSum) * annuitet);
+    // return Math.round((this.carPrice - this.creditSum) / this.creditPeriod);
   }
 
   calculateSumValue(val) {

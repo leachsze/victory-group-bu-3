@@ -75,4 +75,31 @@
     .sales__wrapper {
         grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
     }
+
+    .sales-page {
+        border-radius: 40px 40px 0 0;
+        margin-top: 60px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .sales__item__image {
+        height: 218px;
+    }
+
+    .sales__item__body {
+        height: auto;
+    }
+
+    .sales__item__button {
+        margin-top: 20px;
+    } 
+
+    .sales__item__title {
+        font-size: 24px;
+    }
+
+    .sales__item__desc {
+        font-size: 14px;
+    }
 }

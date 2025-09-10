@@ -3,7 +3,6 @@
 
 // JQuery modules
 import 'jquery.inputmask';
-import 'jquery-lazy';
 import 'jquery-modal';
 import 'jquery-validation';
 import 'jquery.cookie';
@@ -38,7 +37,6 @@ import CreditCalculator from './calculator/index.js';
 import ReviewForm from './customForm/ReviewForm.js';
 import CallbackWidget from './callback/index.js';
 import Swipers from './swipers/index.js';
-import Filter from './filter/index.js';
 import Vin from './vin/index.js';
 
 window.$ = $;
@@ -169,11 +167,12 @@ window.app = {
         $('[data-car-year]').val(currentCar.year);
         $('[data-car-name]').val(currentCar.name);
         $('span[data-car-price]').text(formattedPrice);
+        $('#first-payment-input').attr('max', currentCar.price * 0.9);
+        $('#first-payment-input').val(currentCar.price * 0.3);
         $('#first-payment-input').trigger('input');
 
         $('.credit-main__step__title .title-s').text('Вы выбрали');
         $('.credit-main__preview img').attr('src', currentCar.preview[0].path);
-        $('#first-payment-input').attr('max', currentCar.price * 0.9);
       }
     });
   },
@@ -205,7 +204,7 @@ window.app = {
     });
   },
   runSwiper: () => {
-    Swipers.carItemSwipers();
+    // Swipers.carItemSwipers();
     Swipers.carItemsSwipers();
     Swipers.creditBanner();
     Swipers.giftSwiper();
@@ -228,12 +227,23 @@ window.app = {
       return target.text('Показать все');
     });
 
-    $('.menu-icon').on('click', () => {
+    $('.js-header-open').on('click', () => {
       $('.header').toggleClass('active');
       $('.header__mobile__menu').toggleClass('active');
+      $('.js-header-open').toggleClass('cross-icon');
+      $('.js-header-open').toggleClass('menu-icon');
     });
 
     $('.button__search').on('click', () => {
+      $('.header__search__container').addClass('active');
+      $('.header__search__wrapper').addClass('active');
+    });
+
+    $('.header__mobile__menu  input').on('click', () => {
+      $('.header').toggleClass('active');
+      $('.header__mobile__menu').toggleClass('active');
+      $('.js-header-open').toggleClass('cross-icon');
+      $('.js-header-open').toggleClass('menu-icon');
       $('.header__search__container').addClass('active');
       $('.header__search__wrapper').addClass('active');
     });
@@ -243,10 +253,20 @@ window.app = {
       $('.header__search__container').removeClass('active');
     });
 
+    if (localStorage.getItem('filter') === 'true') {
+      $('#filter-checkbox').prop('checked', true);
+      $('.new-cars__wrapper .filter').css('display', 'flex');
+    } else {
+      $('#filter-checkbox').prop('checked', false);
+      $('.new-cars__wrapper .filter').css('display', 'none');
+    }
+
     $('#filter-checkbox').on('change', (event) => {
       if (event.currentTarget.checked) {
+        localStorage.setItem('filter', 'true');
         $('.new-cars__wrapper .filter').css('display', 'flex');
       } else {
+        localStorage.setItem('filter', 'false');
         $('.new-cars__wrapper .filter').css('display', 'none');
       }
     });
@@ -277,16 +297,16 @@ window.app = {
       mobileSpecTabs,
     };
   },
-  runLazy: () => {
-    $('.lazy').Lazy({
-      // visibleOnly: true,
-      combined: true,
-      afterLoad: function(element) {
-        element.addClass('loaded');
-      },
-    });
-  },
   runFormsValidation: () => {
+    jQuery.validator.addMethod('agreementValidator', function(value, element) {
+      const isChecked = $(element).is(':checked');
+      if (!isChecked) {
+        $(element).closest('.agreement__wrapper').addClass('shake');
+        return false;
+      }
+      $(element).closest('.agreement__wrapper').removeClass('shake');
+      return true;
+    });
     jQuery.validator.addMethod('ruPhone', function(phoneNumber) {
       function countDigits(str) {
         const regex = /\d/g;
@@ -309,6 +329,9 @@ window.app = {
       $(this).validate({
         focusInvalid: false,
         rules: {
+          license: {
+            agreementValidator: true,
+          },
           name: {
             required: true,
             minlength: 2,
@@ -446,18 +469,17 @@ window.app = {
         target.addClass('active');
       }
 
+      $('.favoutrite__count').text(favourites.size);
       $.cookie('favourites', Array.from(favourites));
     });
   },
 
-  runFilter: () => new Filter(),
   runVin: () => new Vin(),
 };
 
 window.calculator = window.app.runCalculator();
 window.app.runFormsValidation();
 window.app.runVin();
-window.app.runFilter();
 window.app.runFancybox();
 window.app.runTabs();
 window.app.runMasks();
@@ -465,7 +487,6 @@ window.app.runSwiper();
 window.app.runTimers();
 window.app.runListeners();
 window.app.runFindByMark();
-window.app.runLazy();
 window.app.runSelect2();
 window.app.runModals();
 window.app.runCallbackWidget();

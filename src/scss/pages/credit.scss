@@ -7,7 +7,7 @@
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        gap: 20px;
     }
 
     &__select {
@@ -22,14 +22,18 @@
         }
     }
 
+    &__descr-form {
+        font-size: 10px;
+        color: #b4b4b4;
+    }
+
     &__form {
         padding: 40px;
         background: $white;
         border-radius: 20px;
-        margin-top: 60px;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
         height: 100%;
 
         &__container {
@@ -37,7 +41,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 20px;
+            gap: 8px;
 
             .input {
                 background: #F2F6FD;
@@ -67,7 +71,7 @@
 
     &__preview {
         background: $white;
-        max-height: 228px;
+        max-height: 293px;
         width: 100%;
         border-radius: 20px;
 
@@ -89,7 +93,8 @@
     &__step {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        justify-content: space-between;
+        gap: 20px;
 
         .title-s {
             font-size: 20px;
@@ -126,7 +131,7 @@
     &__credit-info__wrapper {
         display: grid;
         column-gap: 15px;
-        row-gap: 51px;
+        row-gap: 25px;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -162,7 +167,7 @@
 
             &__wrapper {
                 display: flex;
-                gap: 10px;
+                gap: 3px;
                 flex-direction: column;
                 padding: 15px 20px;
                 background: $white;
@@ -219,6 +224,29 @@
 @media (max-width: 1100px) {
     .br-desktop {
         display: none;
+    }
+
+    .credit-car {
+        &__item {
+            &__name {
+                font-size: 12px;
+                line-height: 12px;
+            }
+
+            &__mileage {
+                font-size: 10px;
+                line-height: 10px;
+            }
+
+            &__price {
+                font-size: 10px;
+                line-height: 10px;
+            }
+
+            &__image {
+                max-width: 108px;
+            }
+        }
     }
 
     .main__subtitle__s {

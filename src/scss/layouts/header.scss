@@ -225,27 +225,26 @@
 
         transition: 0.3s background;
         
-        &.active {
-            position: fixed;
-            background: #425EF1;
-        }
-
-
         &__mobile__menu {
             display: flex;
             position: fixed;
             bottom: 0;
             background: #F2F6FD;
-            height: calc(100vh - 64px);
+            height: 100dvh;
             overflow: hidden;
             overflow-y: auto;
             z-index: 10000;
-            padding: 30px 16px;
             flex-direction: column;
             gap: 24px;
             width: 100%;
             left: -100%;
             transition: 0.3s left;
+
+            .header__container__mobile {
+                background: #425ef1;
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
 
             &.active {
                 left: 0%;

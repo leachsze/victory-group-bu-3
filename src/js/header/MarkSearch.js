@@ -56,7 +56,8 @@ export default class MarkSearch {
     const { value } = event.currentTarget;
     const filteredCarbrands = this.carbrands.filter((carbrand) => {
       const brand = carbrand.name.toLocaleLowerCase();
-      return brand.includes(value.toLocaleLowerCase());
+      const ruBrand = carbrand.name_ru.toLocaleLowerCase();
+      return brand.includes(value.toLocaleLowerCase()) || ruBrand.includes(value.toLocaleLowerCase());
     });
     if (filteredCarbrands.length > 0) {
       $('.header__search__result').addClass('active');

@@ -397,6 +397,7 @@
         flex-direction: column;
         border-radius: 20px 20px 0 0;
         padding: 30px 16px;
+        margin-top: 40px;
         
         &__title {
             font-size: 24px;
@@ -444,7 +445,19 @@
         }
 
         &__gallery {
-            display: none;
+            gap: 10px;
+
+            &__big {
+                height: 249px;
+            }
+
+            &__small {
+                gap: 10px;
+
+                &__item {
+                    height: 54px;
+                }
+            }
         }
 
         &__wrapper {
@@ -495,6 +508,30 @@
         &__gift__swiper {
             max-width: none;
         }
+    }
+
+    .car-info__spec {
+        padding: 20px;
+    }
+
+    .car-info .model-description__block {
+        margin-bottom: 20px;
+    }
+    .car-info .model-description__block-title {
+        margin-bottom: 12px;
+    }
+
+    .car-info .model-description__block-list-item {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .model-description__block {
+        width: 100%;
+    }
+
+    .credit-main__credit-info__item .title-s {
+        font-size: 26px;
     }
 }
 

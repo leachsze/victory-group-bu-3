@@ -192,11 +192,13 @@
       margin-bottom: 0;
 
       &__image__car-icon {
-        right: 22.2vw; width: 105px; bottom: 35px;
+        right: 16.2vw;
+        width: 105px !important;
+        bottom: 35px;
       }
 
       &__image__car {
-        width: 160px;
+        width: 160px !important;
         -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
         right: 0px;
@@ -204,13 +206,13 @@
       }
 
       &__image__wheels-icon {
-        right: 9.2vw;
-        width: 220px;
-        top: -31px;
+        right: 2.2vw;
+        width: 220px !important;
+        top: -31px !important;
       }
 
       &__image__wheels { 
-        width: 140px;
+        width: 140px !important;
         right: 0px;
         bottom: 20px;
       }
