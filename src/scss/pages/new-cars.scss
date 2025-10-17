@@ -37,19 +37,13 @@
   }
 
   &__container {
-    margin: 0 auto;
     margin-bottom: 40px;
-    max-width: calc(100vw - 160px);
-    padding: 0 10px;
 
     .swiper-wrapper {
         .car-item {
             max-width: none;
         }
     }
-    // .car-item {
-    //     max-width: 340px;
-    // }
   }
 
   &__pagination { 
@@ -71,7 +65,7 @@
     }
 
     &__wrapper {
-        grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
   }
 }

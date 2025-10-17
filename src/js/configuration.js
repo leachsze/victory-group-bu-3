@@ -71,7 +71,7 @@ const configuration = {
       },
     },
   },
-  marksListRoute: 'https://bu-3.vitmp.ru/ajax/used_auto/get/marks/all',
+  marksListRoute: `${window.origin}/ajax/used_auto/get/marks/all`,
   timerDate: '2024/09/29',
   filterSlugs: {
     1: {

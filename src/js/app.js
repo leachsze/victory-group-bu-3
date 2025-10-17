@@ -50,8 +50,7 @@ window.app = {
     $('.select').not('.credit-js-select-marks').select2({
       language: 'ru',
     });
-    // const url = document.location.origin;
-    const url = 'https://bu-3.vitmp.ru';
+    const url = document.location.origin;
     let cars = [];
     $('.credit-js-select-marks').select2({
       language: 'ru',
@@ -204,9 +203,7 @@ window.app = {
     });
   },
   runSwiper: () => {
-    // Swipers.carItemSwipers();
     Swipers.carItemsSwipers();
-    Swipers.creditBanner();
     Swipers.giftSwiper();
   },
   runTimers: () => {
